@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>IronGym | Спортивный зал</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ШАПКА С БОЛЬШИМ ФОТО ЗАЛА -->
+<header class="hero">
+    <div class="hero-overlay">
+        <div class="hero-content">
+            <h1>IRON<span>GYM</span></h1>
+            <p>Твой путь к силе и телу мечты</p>
+            <a href="#order" class="btn-hero">Записаться</a>
+        </div>
+    </div>
+</header>
+
+<!-- КАРТОЧКИ ТОВАРОВ / УСЛУГ -->
+<section class="container" id="products">
+    <h2 class="section-title">🔥 Наши абонементы</h2>
+    <div class="cards-grid">
+        <!-- Карточка 1: Разовое посещение -->
+        <div class="card">
+            <div class="card-img" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRk3eVh3Qq5IRR_D_00xG0pGSWdsW7aPODnQ&s');">
+                <div class="badge">Старт</div>
+            </div>
+            <div class="card-content">
+                <h3 class="card-title">Разовое занятие</h3>
+                <p class="card-desc">Полный доступ ко всем тренажёрам + раздевалка + вода в подарок.</p>
+                <div class="price-row">
+                    <span class="price">500 ₽</span>
+                    <button class="btn-card" data-name="Разовое занятие" data-price="500">Выбрать</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Карточка 2: Месячный абонемент -->
+        <div class="card">
+            <div class="card-img" style="background-image: url('https://peredelkino.magneto.fit/assets/images/service/web_ve.jpg');">
+                <div class="badge">Популярный</div>
+            </div>
+            <div class="card-content">
+                <h3 class="card-title">1 месяц безлимит</h3>
+                <p class="card-desc">Безлимит на все групповые программы и тренажёрный зал. Заморозка на 7 дней.</p>
+                <div class="price-row">
+                    <span class="price">3 900 ₽</span>
+                    <button class="btn-card" data-name="1 месяц безлимит" data-price="3900">Выбрать</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Карточка 3: Полугодовой -->
+        <div class="card">
+            <div class="card-img" style="background-image: url('https://spbau.ru/images/images/sports/DSCF3005.webp');">
+                <div class="badge">Выгода 20%</div>
+            </div>
+            <div class="card-content">
+                <h3 class="card-title">Premium 6 месяцев</h3>
+                <p class="card-desc">Всё включено: тренажёрка, бассейн, сауна, персональный план тренировок.</p>
+                <div class="price-row">
+                    <span class="price">18 900 ₽</span>
+                    <button class="btn-card" data-name="Premium 6 месяцев" data-price="18900">Выбрать</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Карточка 4: Персональные тренировки -->
+        <div class="card">
+            <div class="card-img" style="background-image: url('https://proftren.ru/assets/images/articles/4093/trainer-min.jpg');">
+                <div class="badge">VIP</div>
+            </div>
+            <div class="card-content">
+                <h3 class="card-title">5 персональных тренировок</h3>
+                <p class="card-desc">С тренером высшей категории. Составление программы, контроль питания.</p>
+                <div class="price-row">
+                    <span class="price">7 500 ₽</span>
+                    <button class="btn-card" data-name="5 персональных тренировок" data-price="7500">Выбрать</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ФОРМА ЗАЯВКИ -->
+<section class="order-section" id="order">
+    <div class="order-container">
+        <h2 class="section-title light">📝 Оставить заявку</h2>
+        <p class="order-sub">Мы перезвоним в течение 15 минут, подберём лучший абонемент</p>
+        
+        <form id="callback-form" class="order-form">
+            <input type="text" id="name" placeholder="Ваше имя" required>
+            <input type="tel" id="phone" placeholder="Номер телефона" required>
+            <select id="service" required>
+                <option value="" disabled selected>Выберите абонемент или услугу</option>
+                <option value="Разовое занятие">Разовое занятие (500 ₽)</option>
+                <option value="1 месяц безлимит">1 месяц безлимит (3 900 ₽)</option>
+                <option value="Premium 6 месяцев">Premium 6 месяцев (18 900 ₽)</option>
+                <option value="5 персональных тренировок">5 персональных тренировок (7 500 ₽)</option>
+                <option value="Нужна консультация">Нужна консультация</option>
+            </select>
+            <button type="submit" class="btn-submit">Отправить заявку</button>
+            <p class="form-note">Нажимая на кнопку, вы соглашаетесь с политикой обработки данных</p>
+        </form>
+        <div id="form-message" class="form-message"></div>
+    </div>
+</section>
+
+<!-- ФУТЕР -->
+<footer class="footer">
+    <div class="footer-content">
+        <p>© 2026 IronGym — твой старт к новому телу</p>
+        <p>г. Москва, ул. Спортивная 15 | +7 (999) 456-78-90</p>
+    </div>
+</footer>
+
+<script>
+    // Обработка кнопок карточек: заполняем форму выбранным товаром
+    const btns = document.querySelectorAll('.btn-card');
+    const serviceSelect = document.getElementById('service');
+    btns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const name = btn.getAttribute('data-name');
+            const price = btn.getAttribute('data-price');
+            let optionText = '';
+            if (name === 'Разовое занятие') optionText = 'Разовое занятие (500 ₽)';
+            else if (name === '1 месяц безлимит') optionText = '1 месяц безлимит (3 900 ₽)';
+            else if (name === 'Premium 6 месяцев') optionText = 'Premium 6 месяцев (18 900 ₽)';
+            else if (name === '5 персональных тренировок') optionText = '5 персональных тренировок (7 500 ₽)';
+            else optionText = name;
+            
+            for (let i = 0; i < serviceSelect.options.length; i++) {
+                if (serviceSelect.options[i].text === optionText) {
+                    serviceSelect.selectedIndex = i;
+                    break;
+                }
+            }
+            // плавный скролл к форме
+            document.getElementById('order').scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+
+    // Отправка формы (имитация, без реального бэкенда)
+    const form = document.getElementById('callback-form');
+    const msgDiv = document.getElementById('form-message');
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('name').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const service = document.getElementById('service').value;
+        if (!name || !phone || !service) {
+            msgDiv.textContent = '❌ Заполните все поля!';
+            msgDiv.style.color = '#ff8888';
+            return;
+        }
+        msgDiv.textContent = `✅ Спасибо, ${name}! Ваша заявка на "${service}" принята. Мы перезвоним на ${phone}.`;
+        msgDiv.style.color = '#a0ffa0';
+        form.reset();
+        setTimeout(() => {
+            msgDiv.textContent = '';
+        }, 5000);
+    });
+</script>
+</body>
+</html>
